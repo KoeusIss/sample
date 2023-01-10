@@ -9,5 +9,6 @@ defmodule ApiWeb.Router do
     pipe_through :api
 
     get "/status", HealthcheckController, :status
+    post "/users", UserController, :create
   end
 end
