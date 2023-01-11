@@ -1,4 +1,7 @@
 defmodule Database.Table do
+  @moduledoc """
+  Database tables
+  """
   use Ecto.Schema
 
   schema "users" do

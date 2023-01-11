@@ -1,4 +1,7 @@
 defmodule Accounts.Commands.RegisterUser do
+  @moduledoc """
+  Register user command
+  """
   alias Accounts.Validators.UniqueEmail
   alias __MODULE__
 

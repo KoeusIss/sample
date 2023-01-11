@@ -1,19 +1,17 @@
-defmodule Core.Application do
+defmodule Cognito.Application do
   @moduledoc """
-  Core application
+  Cognito application
   """
   use Application
 
   @impl true
   def start(_type, _args) do
     children = [
-      Core.App,
-      Accounts.Supervisor
+      Cognito.Supervisor
     ]
 
     opts = [
-      strategy: :one_for_one,
-      name: Core.Supervisor
+      strategy: :one_for_one
     ]
 
     Supervisor.start_link(children, opts)

@@ -1,4 +1,7 @@
 defmodule Core.App do
+  @moduledoc """
+  Core app
+  """
   use Commanded.Application,
     otp_app: :core,
     event_store: [
@@ -10,5 +13,5 @@ defmodule Core.App do
     {:ok, config}
   end
 
-  router Core.Router
+  router(Core.Router)
 end

@@ -1,4 +1,5 @@
 defmodule Database do
+  @moduledoc false
 
   # alias Database.{ Repo, Table }
   # import Ecto.Query, only: [from: 2]

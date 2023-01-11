@@ -1,4 +1,7 @@
 defmodule Accounts.Projections.User do
+  @moduledoc """
+  User projection to persistence
+  """
   use Ecto.Schema
 
   @primary_key {:uuid, :binary_id, autogenerate: false}

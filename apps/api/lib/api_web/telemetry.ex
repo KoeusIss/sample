@@ -1,4 +1,7 @@
 defmodule ApiWeb.Telemetry do
+  @moduledoc """
+  Telemetry supervisor
+  """
   use Supervisor
   import Telemetry.Metrics
 
@@ -24,7 +27,6 @@ defmodule ApiWeb.Telemetry do
         tags: [:route],
         unit: {:native, :millisecond}
       ),
-
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
       summary("vm.total_run_queue_lengths.total"),
       summary("vm.total_run_queue_lengths.cpu"),

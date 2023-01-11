@@ -1,4 +1,7 @@
 defmodule Accounts.Queries.UserByUuid do
+  @moduledoc """
+  Find user by uuid
+  """
   import Ecto.Query
 
   alias Accounts.Projections.User

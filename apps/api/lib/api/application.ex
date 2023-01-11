@@ -1,4 +1,7 @@
 defmodule Api.Application do
+  @moduledoc """
+  Api application
+  """
   use Application
 
   @impl true

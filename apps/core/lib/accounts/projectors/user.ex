@@ -1,4 +1,7 @@
 defmodule Accounts.Projectors.User do
+  @moduledoc """
+  Account projecto user
+  """
   use Commanded.Projections.Ecto,
     application: Core.App,
     repo: Database.Repo,

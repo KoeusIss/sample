@@ -1,4 +1,7 @@
 defmodule Accounts.Aggregates.User do
+  @moduledoc """
+  User aggregate
+  """
   defstruct [
     :uuid,
     :email,

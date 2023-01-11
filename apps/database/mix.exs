@@ -1,13 +1,13 @@
 defmodule Database.Mixfile do
   use Mix.Project
 
-  @name    :database
+  @name :database
   @version "0.1.0"
 
   @deps [
-    { :postgrex, ">= 0.0.0" },
-    { :ecto,     ">= 0.0.0" },
-    {:ecto_sql, "~> 3.6"},
+    {:postgrex, ">= 0.0.0"},
+    {:ecto, ">= 0.0.0"},
+    {:ecto_sql, "~> 3.6"}
   ]
 
   @aliases [
@@ -20,25 +20,26 @@ defmodule Database.Mixfile do
   # ------------------------------------------------------------
 
   def project do
-    in_production = Mix.env == :prod
-    [
-      app:     @name,
-      version: @version,
-      elixir:  ">= 1.14.2",
-      deps:    @deps,
-      aliases: @aliases,
-      build_embedded:  in_production,
+    in_production = Mix.env() == :prod
 
+    [
+      app: @name,
+      version: @version,
+      elixir: ">= 1.14.2",
+      deps: @deps,
+      aliases: @aliases,
+      build_embedded: in_production
     ]
   end
 
   def application do
     [
-      mod: { Database.Application, [] },         # Entry point module and parameters
-      extra_applications: [         # built-in apps that need starting
+      # Entry point module and parameters
+      mod: {Database.Application, []},
+      # built-in apps that need starting
+      extra_applications: [
         :logger
-      ],
+      ]
     ]
   end
-
 end

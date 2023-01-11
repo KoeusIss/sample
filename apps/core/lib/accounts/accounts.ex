@@ -1,8 +1,9 @@
 defmodule Accounts do
+  @moduledoc """
+  Account context interface
+  """
   alias Accounts.Commands.RegisterUser
-  alias Accounts.Queries.UserByUuid
   alias Core.App
-  alias Database.Repo
 
   def register_user(attrs \\ %{}) do
     uuid = UUID.uuid4()
@@ -14,8 +15,6 @@ defmodule Accounts do
       |> RegisterUser.downcase_email()
       |> RegisterUser.set_uuid(uuid)
 
-      with :ok <- App.dispatch(register_user, consistency: :strong) do
-        :ok
-      end
+    App.dispatch(register_user, consistency: :strong)
   end
 end

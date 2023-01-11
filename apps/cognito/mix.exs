@@ -1,24 +1,14 @@
-defmodule Core.MixProject do
+defmodule Cognito.MixProject do
   use Mix.Project
 
-  @name :core
+  @name :cognito
   @version "0.1.0"
 
   @deps [
+    {:aws, "~> 0.13.0"},
+    {:hackney, "~> 1.18"},
     {:jason, "~> 1.2"},
-    {:commanded, "~> 1.4"},
-    {:eventstore, "~> 1.4"},
-    {:exconstructor, "~> 1.2"},
-    {:commanded_eventstore_adapter, "~> 1.4"},
-    {:commanded_ecto_projections, "~> 1.3"},
-    {:bcrypt_elixir, "~> 3.0"},
-    {:uuid, "~> 1.1"},
-    {:vex, "~> 0.9"},
-    {:database, in_umbrella: true}
-  ]
-
-  @aliases [
-    setup: ["deps.get"]
+    {:exconstructor, "~> 1.2"}
   ]
 
   # ------------------------------------------------------------
@@ -35,14 +25,13 @@ defmodule Core.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.14",
       start_permanent: in_production,
-      deps: @deps,
-      aliases: @aliases
+      deps: @deps
     ]
   end
 
   def application do
     [
-      mod: {Core.Application, []},
+      mod: {Cognito.Application, []},
       extra_applications: [:logger]
     ]
   end

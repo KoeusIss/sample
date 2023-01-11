@@ -1,6 +1,6 @@
-defmodule Accounts.Supervisor do
+defmodule Cognito.Supervisor do
   @moduledoc """
-  Account supervisor
+  Cognito supervisor
   """
   use Supervisor
 
@@ -11,7 +11,7 @@ defmodule Accounts.Supervisor do
   def init(_) do
     Supervisor.init(
       [
-        Accounts.Projectors.User
+        Cognito.Client
       ],
       strategy: :one_for_one
     )

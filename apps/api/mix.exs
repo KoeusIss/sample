@@ -1,7 +1,7 @@
 defmodule Api.MixProject do
   use Mix.Project
 
-  @name    :api
+  @name :api
   @version "0.1.0"
 
   @deps [
@@ -10,7 +10,8 @@ defmodule Api.MixProject do
     {:telemetry_poller, "~> 1.0"},
     {:jason, "~> 1.2"},
     {:plug_cowboy, "~> 2.5"},
-    {:core, in_umbrella: true}
+    {:core, in_umbrella: true},
+    {:sobelow, "~> 0.8", only: :dev}
   ]
 
   @aliases [
@@ -20,7 +21,8 @@ defmodule Api.MixProject do
   # ------------------------------------------------------------
 
   def project do
-    in_production = Mix.env == :prod
+    in_production = Mix.env() == :prod
+
     [
       app: @name,
       version: @version,
